@@ -11,7 +11,7 @@ st.set_page_config(
 )
 
 # -------------------------- Cached Functions --------------------------
-@st.cache_resource(show_spinner = "Loading embedding model...")
+@st.cache_resource(show_spinner = "Loading embedding model ...")
 def load_embedding_model():
     """Load the SentenceTransformer model (cached)"""
     try:
@@ -23,7 +23,7 @@ def load_embedding_model():
         st.error(f"Failed to load model: {str(e)}")
         st.stop()
 
-@st.cache_data(show_spinner = "Processing text and generating embeddings...")
+@st.cache_data(show_spinner = "Processing text and generating embeddings ...")
 def process_text_and_generate_embeddings(text, _model):
     """Chunk text and generate semantic vectors"""
     # 1. Chunking: Split by paragraphs, filter empty lines
@@ -91,7 +91,7 @@ def main():
     st.subheader("Step 2. Select Number of Results")
     col_slider, _ = st.columns([1, 1]) 
     with col_slider:
-        top_k = st.slider("Number of Results", min_value=1, max_value=10, value=5)
+        top_k = st.slider("Number of Results", min_value=1, max_value=10, value=4)
 
     # Handle Data Source
     text_source = None
@@ -111,7 +111,7 @@ def main():
 
     # Search Section
     st.subheader("Step 3. Start Searching")
-    query = st.text_input("Enter search keywords or sentences", placeholder="e.g., Application scenarios of AI...")
+    query = st.text_input("Enter search keywords or sentences", placeholder="e.g., Application scenarios of AI ...")
 
     # UI Guidance
     if not text_source:
@@ -123,7 +123,7 @@ def main():
 
     # Execution
     if search_btn and text_source and query:
-        with st.spinner("Finding best matches..."):
+        with st.spinner("Finding best matches ..."):
             # Process text and embeddings
             chunks, embeddings = process_text_and_generate_embeddings(text_source, model)
 
