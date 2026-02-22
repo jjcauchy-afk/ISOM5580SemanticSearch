@@ -1,8 +1,8 @@
 import streamlit as st
-import os
+#import os
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
-import re
+#import re
 
 # -------------------------- 页面基础配置 --------------------------
 st.set_page_config(
