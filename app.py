@@ -17,7 +17,8 @@ def load_embedding_model():
     """Load the SentenceTransformer model (cached)"""
     try:
         # Lightweight model, balanced for speed and performance
-        model = SentenceTransformer('all-MiniLM-L6-v2')
+        #model = SentenceTransformer('all-MiniLM-L6-v2')
+        model = SentenceTransformer('BAAI/bge-base-en-v1.5')
         return model
     except Exception as e:
         st.error(f"Failed to load model: {str(e)}")
