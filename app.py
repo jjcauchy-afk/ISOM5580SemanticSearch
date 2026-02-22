@@ -2,6 +2,10 @@ import streamlit as st
 # 1. Install dependencies: pip install sentence-transformers
 from sentence_transformers import SentenceTransformer, util
 
+# 2. Load a pre-trained model
+# 'all-MiniLM-L6-v2' is fast and lightweight
+model = SentenceTransformer('all-MiniLM-L6-v2')
+
 # 3. Define your corpus (the documents to search through)
 corpus = [
     "The capital of France is Paris.",
