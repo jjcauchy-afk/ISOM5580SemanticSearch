@@ -5,14 +5,13 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 # -------------------------- Page Configuration --------------------------
 st.set_page_config(
-    page_title="ISOM5580 Semantic Search",
-    page_icon="🔍",
-    layout="wide"
+    page_title = "ISOM5580 Semantic Search",
+    page_icon = "🔍",
+    layout = "wide"
 )
 
-
 # -------------------------- Cached Functions --------------------------
-@st.cache_resource(show_spinner="Loading embedding model...")
+@st.cache_resource(show_spinner = "Loading embedding model...")
 def load_embedding_model():
     """Load the SentenceTransformer model (cached)"""
     try:
@@ -24,8 +23,7 @@ def load_embedding_model():
         st.error(f"Failed to load model: {str(e)}")
         st.stop()
 
-
-@st.cache_data(show_spinner="Processing text and generating embeddings...")
+@st.cache_data(show_spinner = "Processing text and generating embeddings...")
 def process_text_and_generate_embeddings(text, _model):
     """Chunk text and generate semantic vectors"""
     # 1. Chunking: Split by paragraphs, filter empty lines
@@ -75,19 +73,19 @@ def main():
 
     # Sidebar: Data Source Settings
     with st.sidebar:
-        st.subheader("Data Settings")
+        st.subheader("Data Source")
         # Option 1: File Upload
         uploaded_file = st.file_uploader(
-            "Upload Text File (.txt)",
-            type=["txt"],
-            help="Supports plain text files. UTF-8 encoding is recommended."
+            "Option 1: Upload Text File (.txt)",
+            type = ["txt"],
+            help = "Supports plain text files. UTF-8 encoding is recommended."
         )
 
         # Option 2: Manual Input
         manual_text = st.text_area(
-            "Or Paste Text Directly",
-            height=200,
-            placeholder="Paste your content here..."
+            "Option 2: Paste Text Directly",
+            height = 200,
+            placeholder = "Paste your content here..."
         )
 
         # Parameters
