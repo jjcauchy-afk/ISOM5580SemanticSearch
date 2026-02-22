@@ -25,7 +25,7 @@ corpus = [
 corpus_embeddings = model.encode(corpus, convert_to_tensor=True)
 
 # 5. User Input
-query = st.text_input("Enter your search query:", "Which city is the London capital?")
+query = st.text_input("Enter your search query:", "Which city is the France's capital?")
 
 if query:
     # 6. Encode Query & Search
