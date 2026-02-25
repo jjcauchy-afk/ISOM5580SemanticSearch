@@ -5,7 +5,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 # -------------------------- Page Configuration --------------------------
 st.set_page_config(
-    page_title = "ISOM5580 Semantic Search",
+    page_title = "Semantic Search App",
     page_icon = "🔍",
     layout = "wide"
 )
